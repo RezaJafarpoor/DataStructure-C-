@@ -1,6 +1,6 @@
 ﻿namespace DataStructure.Searchings;
 
-public static class SearchData
+public static class Data
 {
     public static int[] searchData =
     [
@@ -9,4 +9,12 @@ public static class SearchData
         59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86,
         87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100,1200
     ];
+
+    private static Random rand = new Random();
+
+    public static int[] sortData = Enumerable
+        .Repeat(0, 100)
+        .Select(i => rand.Next(1, 100)).ToArray();
+
+    public static int[] arr = { 64, 34, 25, 12, 22, 11, 90 };
 }

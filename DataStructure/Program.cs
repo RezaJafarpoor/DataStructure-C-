@@ -1,4 +1,6 @@
 ﻿
 using DataStructure.Searchings;
+using DataStructure.Sorting;
 
-BinarySearch.RecursiveSearch(SearchData.searchData,23);
+BubbleSort.Sort(Data.sortData);
+
