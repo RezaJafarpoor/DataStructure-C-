@@ -1,5 +1,5 @@
 ﻿
 using DataStructure.Searchings;
 
-LinearSearch.Search(LinearSearch.
-    searchData, 45);
+BinarySearch.Search(SearchData.searchData, 85);
+LinearSearch.Search(SearchData.searchData, 85);
