@@ -2,37 +2,89 @@
 
 public static class BinarySearch
 {
+   private static int _count = 0;
+   private static bool _found = false;
+   private static int _low = 0; 
+   private static int _high = 0;
+
+
     public static void Search(int[] array, int key)
     {
-        var count = 0;
-        var found = false;
-        var low = 0;
-        var high = array.Length;
-        while (low <= high)
+        
+        while (_low <= _high)
         {
-            count++;
-            var mid = (low + high) / 2;
+            _count++;
+            var mid = (_low + _high) / 2;
             if (key == array[mid])
             {
-                Console.WriteLine($"Element {key} found in index {mid}. Search Count: {count}");
-                found = true;
+                Console.WriteLine($"Element {key} found in index {mid}. Search Count: {_count}");
+                _found = true;
                 break;
             }
             else if (key > array[mid])
             {
-                low = mid + 1;
+                _low = mid + 1;
             }
             else
             {
-                high = mid - 1;
+                _high = mid - 1;
             }
 
 
         }
 
-        if (found ==false)
+        if (_found ==false)
         {
             Console.WriteLine("Not Found");
+
+        }
+    }
+
+    public static void RecursiveSearch(int[] array, int key)
+    {
+        _high = array.Length;
+        
+        if (_low <= _high)
+        {
+            _count++;
+            var mid = (_low + _high) / 2;
+            
+            if (array[mid] == key)
+            {
+                Console.WriteLine($"Element {key} found. Search Count: {_count}");
+                _found = true;
+
+            }
+            else if (key > array[mid])
+            {
+                if ((mid + 1) >= _high)
+                {
+                    Console.WriteLine("Not Found");
+
+                }
+                else
+                {
+                    RecursiveSearch(array[(mid+1).._high],key);
+
+                }
+            }
+            else if (key < array[mid])
+            {
+                if ((mid -1) <= 0)
+                {
+                    Console.WriteLine("Not Found");
+
+                }
+                else
+                {
+                    RecursiveSearch(array[_low..(mid-1)],key);
+
+                }
+            }
+            
+
+
+
 
         }
     }
