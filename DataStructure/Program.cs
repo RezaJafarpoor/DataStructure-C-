@@ -2,4 +2,4 @@
 using DataStructure.Searchings;
 using DataStructure.Sorting;
 
-BubbleSort.Sort(Data.sortData);
+SelectionSort.Sort(Data.staticData);

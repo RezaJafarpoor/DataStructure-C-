@@ -8,25 +8,23 @@ public static class BubbleSort
         int count = 0;
         var length = array.Length;
         bool swap;
-        for (int i = 0; i <= length-1; i++)
+        for (int i = 0; i < length ; i++)
         {
             swap = false;
-            for (int j = 0; j <length -1; j++)
+            for (int j = 0; j <length -(1+i); j++)
             {
                 comparison++;
                 if (array[j] > array[j+1])
                 {
                     (array[j], array[j + 1]) = (array[j + 1], array[j]);
                     count++;
-                    comparison++;
                     swap = true;
                 }
             }
 
             if (swap ==false)
             {
-                Console.WriteLine($"Sort Completed. With {count} Swaps Total Comparisons: {comparison}");
-
+                Console.WriteLine($"Sort Completed. With {count} Swaps, Total Comparisons: {comparison}");
                 break;
             }
         }

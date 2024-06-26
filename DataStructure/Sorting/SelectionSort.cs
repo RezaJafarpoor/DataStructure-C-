@@ -12,16 +12,20 @@ public static class SelectionSort
         {
             comparison++;
             min = i;
-            for (var j = i+1; j < length; j++)
+            for (var j = i + 1; j < length; j++)
             {
                 comparison++;
 
                 if (array[min] > array[j])
                 {
-                    (array[min], array[j]) = (array[j], array[min]);
-                    count++;
+                    min = j;
 
                 }
+            }
+            if (min != i)
+            {
+                (array[i], array[min]) = (array[min], array[i]);
+                count++;
             }
         }
         Console.WriteLine($"Sort Completed. With {count} Swaps   Total Comparisons : {comparison}");

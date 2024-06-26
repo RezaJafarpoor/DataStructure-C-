@@ -16,4 +16,7 @@ public static class Data
         .Repeat(0, 100)
         .Select(i => rand.Next(1, 100)).ToArray();
 
+    public static int[] staticData = [10, 48, 29, 47, 15, 3, 41, 11, 19, 4, 27, 27, 23, 12, 45, 44, 34, 25, 41, 20];
+
+
 }
