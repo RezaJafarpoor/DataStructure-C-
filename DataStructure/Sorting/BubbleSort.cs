@@ -4,6 +4,7 @@ public static class BubbleSort
 {
     public static void Sort(int[] array)
     {
+        int comparison=0;
         int count = 0;
         var length = array.Length;
         bool swap;
@@ -12,17 +13,20 @@ public static class BubbleSort
             swap = false;
             for (int j = 0; j <length -1; j++)
             {
+                comparison++;
                 if (array[j] > array[j+1])
                 {
                     (array[j], array[j + 1]) = (array[j + 1], array[j]);
                     count++;
+                    comparison++;
                     swap = true;
                 }
             }
 
             if (swap ==false)
             {
-                Console.WriteLine($"Sort Completed. Swap Counter: {count}" );
+                Console.WriteLine($"Sort Completed. With {count} Swaps Total Comparisons: {comparison}");
+
                 break;
             }
         }

@@ -5,21 +5,27 @@ public static class SelectionSort
     public static void Sort(int[] array)
     {
         int count = 0;
+        int comparison = 0;
         var length = array.Length;
-        var min = new int();
+        int min; 
         for (var i = 0; i < length-1; i++)
         {
+            comparison++;
             min = i;
             for (var j = i+1; j < length; j++)
             {
+                comparison++;
+
                 if (array[min] > array[j])
                 {
                     (array[min], array[j]) = (array[j], array[min]);
                     count++;
+
                 }
             }
         }
-        Console.WriteLine($"Sort Completed. Swap Counter :{count}");
+        Console.WriteLine($"Sort Completed. With {count} Swaps   Total Comparisons : {comparison}");
+
 
         for (int i = 0; i < array.Length; i++)
         {
