@@ -6,29 +6,25 @@ public static class InsertionSort
     {
         int count = 0;
         int comparison = 0;
-        int[] temp = new int[array.Length];
-        temp[0] = array[0];
         var length = array.Length;
         for (var i = 1; i < length; i++)
         {
-            int j;
-            for ( j = i - 1; j >= 0 && array[i] < temp[j]; j--)
+            int temp = array[i];
+            int j = i - 1;
+            comparison++;
+            for ( ; j >= 0 && array[j] > temp; j--)
             {
                 comparison++;
-                temp[j + 1] = temp[j];
+                array[j + 1] = array[j];
                 count++;
+
             }
 
-            temp[j + 1] = array[i];
-            count++;
-            comparison++;
+            array[j + 1] = temp;
 
         }
 
-        for (int index = 0; index < temp.Length; index++)
-        {
-            array[index] = temp[index];
-        }
+       
         
         Console.WriteLine($"Sort Completed. With {count} Swaps Total Comparisons: {comparison}");
 

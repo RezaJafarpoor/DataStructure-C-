@@ -1,4 +1,4 @@
-﻿namespace DataStructure.Searchings;
+﻿namespace DataStructure.Searches;
 
 public static class BinarySearch
 {

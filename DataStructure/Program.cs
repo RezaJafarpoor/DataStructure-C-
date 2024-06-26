@@ -1,5 +1,6 @@
 ﻿
-using DataStructure.Searchings;
+using DataStructure;
+using DataStructure.Searches;
 using DataStructure.Sorting;
 
-SelectionSort.Sort(Data.staticData);
+InsertionSort.Sort(Data.UnsortedData);
