@@ -1,6 +1,11 @@
 ﻿
 using DataStructure;
-using DataStructure.Searches;
 using DataStructure.Sorting;
 
-InsertionSort.Sort(Data.UnsortedData);
+
+
+QuickSort.Sort(Data.UnsortedData,0,Data.UnsortedData.Length-1);
+QuickSort.stats();
+
+
+
