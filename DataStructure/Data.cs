@@ -10,11 +10,11 @@ public static class Data
         87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100,1200
     ];
 
-    private static Random rand = new Random();
+    private static readonly Random Rand = new Random();
 
-    public static int[] UnsortedData = Enumerable
+    public static readonly int[] UnsortedData = Enumerable
         .Repeat(0, 100)
-        .Select(i => rand.Next(1, 100)).ToArray();
+        .Select(i => Rand.Next(1, 100)).ToArray();
 
     public static int[] StaticData = [10, 48, 29, 47, 15, 3, 41, 11, 19, 4, 27, 27, 23, 12, 45, 44, 34, 25, 41, 20];
 
