@@ -3,45 +3,45 @@
 
 public static class QuickSort
 {
-    public static int Count;
-    public static int Comparison;
-    public static int[] sortedArray;
+    private static int _count;
+    private static int _comparison;
+    private static int[] _sortedArray;
     
     public static void Sort(int[] array,int low, int high)
     {
-        sortedArray = array;
-        Comparison++;
+        _sortedArray = array;
+        _comparison++;
         if (low < high)
         {
             var pivot = low;
             var start = low;
             var end = high;
-            Comparison++;
+            _comparison++;
             while (start <= end)
             {
-                Comparison++;
+                _comparison++;
                 while (start <= end && array[start] <= array[pivot])
                 {
                     start++;
                 }
 
-                Comparison++;
+                _comparison++;
                 while (start <= end && array[end] > array[pivot])
                 {
                     end--;
                 }
 
-                Comparison++;
+                _comparison++;
                 if (start <= end)
                 {
                     (array[start], array[end]) = (array[end], array[start]);
-                    Count++;
+                    _count++;
 
                 }
             }
 
             (array[end], array[pivot]) = (array[pivot], array[end]);
-            Count++;
+            _count++;
             
             Sort(array,low, end-1);
             Sort(array,end+1, high);
@@ -50,13 +50,13 @@ public static class QuickSort
         
     }
 
-    public static void stats()
+    public static void Stats()
     {
-        Console.WriteLine($"Sort Completed. With {Count} swaps Total Comparisons : {Comparison}");
+        Console.WriteLine($"Sort Completed. With {_count} swaps Total Comparisons : {_comparison}");
 
-        for (int i = 0; i < sortedArray.Length; i++)
+        for (int i = 0; i < _sortedArray.Length; i++)
         {
-            Console.Write(sortedArray[i] + " ");
+            Console.Write(_sortedArray[i] + " ");
         }
 
         
