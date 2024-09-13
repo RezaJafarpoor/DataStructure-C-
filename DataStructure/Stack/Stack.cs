@@ -1,4 +1,6 @@
-﻿namespace DataStructure.Stack;
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace DataStructure.Stack;
 
 public class Stack
 {
@@ -32,8 +34,11 @@ public class Stack
             stackArray[index] = default;
             index--;
         }
-        
-        
+    }
+
+    public void Peek()
+    {
+        Console.WriteLine(stackArray[index]);
     }
     
 }
